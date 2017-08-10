@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<settings>
+		<setting name="logImpl" value="LOG4J"/>
+	</settings>
+	
+	<typeAliases>
+		<package name="org.framestudy.springwork.beans"/>
+	</typeAliases>
+	
+	<environments default="01">
+		<environment id="01">
+			<transactionManager type="JDBC"></transactionManager>
+			<dataSource type="POOLED">
+				<property name="driver" value="com.mysql.jdbc.Driver"/>
+				<!-- &amp;是&符号的转义 -->
+				<property name="url" value="jdbc:mysql://localhost:3306/javaee?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"/>
+				<property name="username" value="root"/>
+				<property name="password" value="happy123"></property>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<mappers>
+	 	<package name="org.framestudy.springwork.studentmag.mapper"/>
+	 	<package name="org.framestudy.springwork.classmag.mapper"/>
+	</mappers>
+	
+</configuration>
